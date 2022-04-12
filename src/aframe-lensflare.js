@@ -46,7 +46,7 @@ AFRAME.registerComponent('lens-flare-element', {
 	},
 	update(oldData={}) {
 		for (const prop of ['texture', 'size', 'distance', 'color']) {
-			const value = data[prop];
+			const value = this.data[prop];
 			if (oldData[prop] !== value) {
 				if (prop === 'texture') {
 					this.el.sceneEl.systems.material.loadTexture(value, { src: value }, function textureLoaded (texture) {

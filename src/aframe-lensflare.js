@@ -3,19 +3,23 @@
 /* global THREE, AFRAME */
 
 import { LensflareElement } from 'three/examples/jsm/objects/Lensflare.js';
-
 AFRAME.registerComponent('lens-flare', {
 	schema: {
 		texture: {
+			documentation: 'Texture of the lensflare',
+			default: 'https://threejs.org/examples/textures/lensflare/lensflare0.png',
 			type: 'map'
 		},
 		size: {
+			documentation: 'Size in pixels of the lensflare',
 			type: 'map'
 		},
 		distance: {
+			documentation: 'Distance from the light 0-1',
 			default: 0
 		},
 		color: {
+			documentation: 'Override color of the lensflare',
 			type: 'color',
 			default: 'white'
 		},

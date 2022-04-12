@@ -362,7 +362,19 @@
 	} )();
 
 	/* jshint esversion: 9 */
+
+
 	AFRAME.registerComponent('lens-flare', {
+		schema: {},
+		init() {
+			this.lensFlare = new Lensflare();
+			this.el.setObject3D('lensflare', this.lensFlare);
+		},
+		remove() {
+			this.el.removeObject3D('lensflare', this.lensFlare);
+		}
+	});
+	AFRAME.registerComponent('lens-flare-element', {
 		schema: {
 			texture: {
 				description: 'Texture of the lensflare',
@@ -386,6 +398,9 @@
 		init () {
 			this.lensFlare = new LensflareElement();
 			this.el.setObject3D('lensflare', this.lensFlare);
+
+			const parent = this.el.components['lens-flare'] || this.el.parentNode.components['lens-flare'];
+			parent.lensFlare.addElement(this.lensFlare);
 		},
 		update(oldData={}) {
 			for (const prop of ['texture', 'size', 'distance', 'color']) {

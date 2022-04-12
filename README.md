@@ -4,6 +4,10 @@
 <!--DOCS-->
 ### lens-flare component
 
+No configuration required
+Configure each part of the lens flare
+### lens-flare-element component
+
 | Property | Type   | Description                     | Default                                                          |
 | :------- | :----- | :------------------------------ | :--------------------------------------------------------------- |
 | texture  | map    | Texture of the lensflare        | "https://threejs.org/examples/textures/lensflare/lensflare0.png" |

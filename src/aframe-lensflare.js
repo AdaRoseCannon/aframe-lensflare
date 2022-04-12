@@ -41,8 +41,6 @@ AFRAME.registerComponent('lens-flare-element', {
 	},
 	init () {
 		this.lensFlare = new LensflareElement();
-		this.el.setObject3D('lensflare', this.lensFlare);
-
 		const parent = this.el.components['lens-flare'] || this.el.parentNode.components['lens-flare'];
 		parent.lensFlare.addElement(this.lensFlare);
 	},

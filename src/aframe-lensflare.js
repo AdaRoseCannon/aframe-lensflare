@@ -26,7 +26,7 @@ AFRAME.registerComponent('lens-flare', {
 	},
 	init () {
 		this.lensFlare = new LensflareElement();
-		el.setObject3D('lensflare', this.lensFlare);
+		this.el.setObject3D('lensflare', this.lensFlare);
 	},
 	update(oldData={}) {
 		for (const prop of ['texture', 'size', 'distance', 'color']) {
@@ -46,6 +46,6 @@ AFRAME.registerComponent('lens-flare', {
 		}
 	},
 	remove() {
-		el.removeObject3D('lensflare');
+		this.el.removeObject3D('lensflare');
 	}
 });

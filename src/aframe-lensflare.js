@@ -51,7 +51,7 @@ AFRAME.registerComponent('lens-flare-element', {
 				if (prop === 'texture') {
 					this.el.sceneEl.systems.material.loadTexture(value, { src: value }, texture => {
 						this.lensFlare.texture = texture;
-						AFRAME.utils.material.handleTextureEvents(self.el, texture);
+						AFRAME.utils.material.handleTextureEvents(this.el, texture);
 					});
 				} else if (prop === 'color') {
 					this.lensFlare.color.set(value);
